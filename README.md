@@ -1,5 +1,5 @@
 # telegram-auth-verifier
-Golang package for [Telegram Website Login](https://core.telegram.org/widgets/login#checking-authorization) credentials verification.
+Golang package for [Telegram Website Login](https://core.telegram.org/widgets/login#checking-authorization) credentials verification. Check documentation [here](https://pkg.go.dev/github.com/electrofocus/telegram-auth-verifier).
 
 ## Install
 With a [correctly configured](https://golang.org/doc/install#testing) Go toolchain:
