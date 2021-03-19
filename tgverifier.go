@@ -8,6 +8,8 @@ import (
 	"fmt"
 )
 
+// ErrInvalidCreds ...
+// Represents error in case of having invalid Telegram auth credentials
 var ErrInvalidCreds = errors.New("invalid telegram creds")
 
 // Credentials ...
