@@ -4,7 +4,7 @@ Golang package for [Telegram Website Login](https://core.telegram.org/widgets/lo
 ## Install
 With a [correctly configured](https://golang.org/doc/install#testing) Go toolchain:
 
-```go
+```
 go get github.com/electrofocus/telegram-auth-verifier
 ```
 

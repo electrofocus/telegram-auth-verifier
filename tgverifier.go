@@ -10,6 +10,8 @@ import (
 
 var ErrInvalidCreds = errors.New("invalid telegram creds")
 
+// Credentials ...
+// Telegram Login credentials available for parsing from JSON.
 type Credentials struct {
 	ID        int    `json:"id"`
 	FirstName string `json:"first_name"`
@@ -21,7 +23,7 @@ type Credentials struct {
 }
 
 // Verify ...
-// Checks if the credentials came from Telegram.
+// Checks if the credentials are from Telegram.
 // Returns nil error if credentials are from Telegram.
 func (c *Credentials) Verify(token []byte) error {
 	secret := sha256.Sum256(token)
@@ -38,6 +40,8 @@ func (c *Credentials) Verify(token []byte) error {
 	return nil
 }
 
+// String ...
+// Builds credentials string, excluding hash field.
 func (c *Credentials) String() string {
 	s := fmt.Sprintf(`auth_date=%d`, c.AuthDate)
 
