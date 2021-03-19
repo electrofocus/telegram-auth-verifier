@@ -20,6 +20,9 @@ type Credentials struct {
 	Hash      string `json:"hash"`
 }
 
+// Verify ...
+// Checks if the credentials came from Telegram.
+// Returns nil error if credentials are from Telegram.
 func (c *Credentials) Verify(token []byte) error {
 	secret := sha256.Sum256(token)
 
