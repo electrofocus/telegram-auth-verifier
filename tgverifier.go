@@ -8,12 +8,10 @@ import (
 	"fmt"
 )
 
-// ErrInvalidCreds ...
-// Represents error in case of having invalid Telegram auth credentials
+// ErrInvalidCreds represents error in case of having invalid Telegram auth credentials
 var ErrInvalidCreds = errors.New("invalid telegram creds")
 
-// Credentials ...
-// Telegram Login credentials available for parsing from JSON.
+// Credentials are Telegram Login credentials available for parsing from JSON.
 type Credentials struct {
 	ID        int    `json:"id"`
 	FirstName string `json:"first_name"`
@@ -24,8 +22,7 @@ type Credentials struct {
 	Hash      string `json:"hash"`
 }
 
-// Verify ...
-// Checks if the credentials are from Telegram.
+// Verify checks if the credentials are from Telegram.
 // Returns nil error if credentials are from Telegram.
 func (c *Credentials) Verify(token []byte) error {
 	secret := sha256.Sum256(token)
@@ -42,37 +39,26 @@ func (c *Credentials) Verify(token []byte) error {
 	return nil
 }
 
-// String ...
-// Builds credentials string, excluding hash field.
+// String builds credentials string, excluding hash field.
 func (c *Credentials) String() string {
-	s := fmt.Sprintf(`auth_date=%d`, c.AuthDate)
+	s := fmt.Sprintf("auth_date=%d\n", c.AuthDate)
 
 	if c.FirstName != "" {
-		s += fmt.Sprintf(`
-first_name=%s`,
-			c.FirstName)
+		s += fmt.Sprintf("first_name=%s\n", c.FirstName)
 	}
 
-	s += fmt.Sprintf(`
-id=%d`,
-		c.ID)
+	s += fmt.Sprintf("id=%d\n", c.ID)
 
 	if c.LastName != "" {
-		s += fmt.Sprintf(`
-last_name=%s`,
-			c.LastName)
+		s += fmt.Sprintf("last_name=%s\n", c.LastName)
 	}
 
 	if c.PhotoURL != "" {
-		s += fmt.Sprintf(`
-photo_url=%s`,
-			c.PhotoURL)
+		s += fmt.Sprintf("photo_url=%s\n", c.PhotoURL)
 	}
 
 	if c.Username != "" {
-		s += fmt.Sprintf(`
-username=%s`,
-			c.Username)
+		s += fmt.Sprintf("username=%s", c.Username)
 	}
 
 	return s
