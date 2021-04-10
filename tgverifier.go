@@ -41,24 +41,24 @@ func (c *Credentials) Verify(token []byte) error {
 
 // String builds credentials string, excluding hash field.
 func (c *Credentials) String() string {
-	s := fmt.Sprintf("auth_date=%d\n", c.AuthDate)
+	s := fmt.Sprintf("auth_date=%d", c.AuthDate)
 
 	if c.FirstName != "" {
-		s += fmt.Sprintf("first_name=%s\n", c.FirstName)
+		s += fmt.Sprintf("\nfirst_name=%s", c.FirstName)
 	}
 
-	s += fmt.Sprintf("id=%d\n", c.ID)
+	s += fmt.Sprintf("\nid=%d", c.ID)
 
 	if c.LastName != "" {
-		s += fmt.Sprintf("last_name=%s\n", c.LastName)
+		s += fmt.Sprintf("\nlast_name=%s", c.LastName)
 	}
 
 	if c.PhotoURL != "" {
-		s += fmt.Sprintf("photo_url=%s\n", c.PhotoURL)
+		s += fmt.Sprintf("\nphoto_url=%s", c.PhotoURL)
 	}
 
 	if c.Username != "" {
-		s += fmt.Sprintf("username=%s", c.Username)
+		s += fmt.Sprintf("\nusername=%s", c.Username)
 	}
 
 	return s
