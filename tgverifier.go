@@ -25,12 +25,12 @@ type Credentials struct {
 // Verify checks if the credentials are from Telegram.
 // Returns nil error if credentials are from Telegram.
 func (c *Credentials) Verify(token []byte) error {
-	secret := sha256.Sum256(token)
-
-	checkString := c.String()
-
-	authCode := computeHmac256([]byte(checkString), secret[:])
-	hexAuthCode := hex.EncodeToString(authCode)
+	var (
+		secret      = sha256.Sum256(token)
+		checkString = c.String()
+		authCode    = computeHmac256([]byte(checkString), secret[:])
+		hexAuthCode = hex.EncodeToString(authCode)
+	)
 
 	if hexAuthCode != c.Hash {
 		return ErrInvalidCreds
@@ -41,24 +41,18 @@ func (c *Credentials) Verify(token []byte) error {
 
 // String builds credentials string, excluding hash field.
 func (c *Credentials) String() string {
-	s := fmt.Sprintf("auth_date=%d", c.AuthDate)
-
-	if c.FirstName != "" {
-		s += fmt.Sprintf("\nfirst_name=%s", c.FirstName)
-	}
-
-	s += fmt.Sprintf("\nid=%d", c.ID)
+	s := fmt.Sprint("auth_date=", c.AuthDate, "\nfirst_name=", c.FirstName, "\nid=", c.ID)
 
 	if c.LastName != "" {
-		s += fmt.Sprintf("\nlast_name=%s", c.LastName)
+		s = fmt.Sprint(s, "\nlast_name=", c.LastName)
 	}
 
 	if c.PhotoURL != "" {
-		s += fmt.Sprintf("\nphoto_url=%s", c.PhotoURL)
+		s = fmt.Sprint(s, "\nphoto_url=", c.PhotoURL)
 	}
 
 	if c.Username != "" {
-		s += fmt.Sprintf("\nusername=%s", c.Username)
+		s = fmt.Sprint(s, "\nusername=", c.Username)
 	}
 
 	return s
