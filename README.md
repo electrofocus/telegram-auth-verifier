@@ -27,7 +27,10 @@ import (
 )
 
 func main() {
-	token := []byte("Your Telegram Bot Token")
+	var (
+		token = []byte("Your Telegram Bot Token")
+		creds = tgverifier.Credentials{}
+	)
 
 	rawCreds := `{
 		"id": 111111111,
@@ -38,7 +41,6 @@ func main() {
 		"hash": "ae1b08443b7bb50295be3961084c106072798cb65e91995a1b49927cd4cc5b0c"
 	}`
 
-	creds := tgverifier.Credentials{}
 	json.Unmarshal([]byte(rawCreds), &creds)
 
 	if err := creds.Verify(token); err != nil {
