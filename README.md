@@ -1,10 +1,11 @@
 # telegram-auth-verifier
 
+[![Go Reference](https://pkg.go.dev/badge/github.com/electrofocus/telegram-auth-verifier.svg)](https://pkg.go.dev/github.com/electrofocus/telegram-auth-verifier)
 [![Open in Visual Studio Code](https://open.vscode.dev/badges/open-in-vscode.svg)](https://open.vscode.dev/electrofocus/telegram-auth-verifier)
 
 ## About
 
-This repository contains the source code of the Golang package for [Telegram Website Login](https://core.telegram.org/widgets/login#checking-authorization) credentials verification. Check documentation [here](https://pkg.go.dev/github.com/electrofocus/telegram-auth-verifier).
+This repository contains the source code of the Golang package for [Telegram Website Login](https://core.telegram.org/widgets/login#checking-authorization) credentials verification.
 
 
 ## Install
