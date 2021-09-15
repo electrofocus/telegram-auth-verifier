@@ -8,8 +8,8 @@ import (
 	"fmt"
 )
 
-// ErrInvalidCreds represents error in case of having invalid Telegram auth credentials
-var ErrInvalidCreds = errors.New("invalid telegram creds")
+// ErrInvalidCredentials represents error in case of having invalid Telegram auth credentials.
+var ErrInvalidCredentials = errors.New("invalid telegram creds")
 
 // Credentials are Telegram Login credentials available for parsing from JSON.
 type Credentials struct {
@@ -33,7 +33,7 @@ func (c *Credentials) Verify(token []byte) error {
 	)
 
 	if hexAuthCode != c.Hash {
-		return ErrInvalidCreds
+		return ErrInvalidCredentials
 	}
 
 	return nil
