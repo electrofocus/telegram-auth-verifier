@@ -5,7 +5,9 @@
 
 ## About
 
-This repository contains the source code of the Golang package for [Telegram Website Login](https://core.telegram.org/widgets/login#checking-authorization) credentials verification.
+Here's the Golang package for [Telegram Website Login](https://core.telegram.org/widgets/login#checking-authorization) credentials verification.
+
+This package uses [semantic versioning v2.0.0](https://semver.org/spec/v2.0.0.html), so you can be sure of backward compatibility of API.
 
 
 ## Install
@@ -20,6 +22,8 @@ go get github.com/electrofocus/telegram-auth-verifier
 Let's verify credentials:
 
 ```go
+package main
+
 import (
 	"encoding/json"
 	"fmt"
@@ -52,3 +56,5 @@ func main() {
 	fmt.Println("Credentials are from Telegram")
 }
 ```
+
+Open above example in [The Go Playground](https://play.golang.org/p/9miM3-Po7Or).
