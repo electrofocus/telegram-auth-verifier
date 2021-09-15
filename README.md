@@ -34,7 +34,7 @@ import (
 func main() {
 	var (
 		token = []byte("Your Telegram Bot Token")
-		creds = tgverifier.Credentials{}
+		creds tgverifier.Credentials
 	)
 
 	rawCreds := `{
@@ -57,4 +57,4 @@ func main() {
 }
 ```
 
-Open above example in [The Go Playground](https://play.golang.org/p/9miM3-Po7Or).
+Open above example in [The Go Playground](https://play.golang.org/p/Pw2v8h4gbo1).
