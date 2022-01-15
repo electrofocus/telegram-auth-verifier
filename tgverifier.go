@@ -9,7 +9,7 @@ import (
 )
 
 // ErrInvalidCredentials represents error in case of having invalid Telegram auth credentials.
-var ErrInvalidCredentials = errors.New("invalid telegram creds")
+var ErrInvalidCredentials = errors.New("invalid telegram credentials")
 
 // Credentials are Telegram Login credentials available for parsing from JSON.
 type Credentials struct {
