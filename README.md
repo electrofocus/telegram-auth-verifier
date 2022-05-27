@@ -4,7 +4,7 @@
 
 ## About
 
-Here's the Golang package for [Telegram Website Login](https://core.telegram.org/widgets/login#checking-authorization) credentials verification.
+Here's the Go package for [Telegram Website Login](https://core.telegram.org/widgets/login#checking-authorization) credentials verification.
 
 This package uses [semantic versioning v2.0.0](https://semver.org/spec/v2.0.0.html), so you can be sure of backward compatibility of API.
 
